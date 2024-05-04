@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    background-color: rgb(241, 241, 241);
+}
+*{
+    box-sizing: border-box;
+}
+.main_menu{
+    background-color: rgb(49, 49, 49);
+    overflow: hidden;
+}
+
+.main_menu a{
+    padding: 14px 16px;
+    display: block;
+    float: left;
+    color: azure;
+    text-decoration: none;
+    text-align: left;
+}
+
+.main_menu a:hover{
+    color: rgb(49, 49, 49);
+    background-color: azure;
+    text-decoration: none;
+}
+ /* right alignment in the main menu */
+.main_menu-right{
+    float: right;
+}
