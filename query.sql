@@ -1,5 +1,5 @@
 queries
--- Query to select all columns from the 'users' table
+-- Query to select all users with their skills and total skill points
 SELECT distinct(u.userId), u.fullname, u.email, up.points, r.role, g.gender, GROUP_CONCAT(s.skill SEPARATOR ', ') AS skills, SUM(s.points) AS sum_skill_points
 FROM users u
 LEFT JOIN roles r USING(roleId)
