@@ -18,11 +18,11 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `fur`
+-- Database: `may`
 --
-DROP DATABASE IF EXISTS `fur`;
-CREATE DATABASE IF NOT EXISTS `fur` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `fur`;
+DROP DATABASE IF EXISTS `may`;
+CREATE DATABASE IF NOT EXISTS `may` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `may`;
 
 -- --------------------------------------------------------
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `gender` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`genderId`),
   UNIQUE KEY `gender` (`gender`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`roleId`),
   UNIQUE KEY `role` (`role`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -71,8 +71,7 @@ CREATE TABLE IF NOT EXISTS `skills` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`skillId`),
   UNIQUE KEY `skill` (`skill`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
+);
 -- --------------------------------------------------------
 
 --
@@ -92,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `email` (`email`),
   KEY `users_ibfk_1` (`genderId`),
   KEY `users_ibfk_2` (`roleId`)
-) ENGINE=InnoDB AUTO_INCREMENT=193425 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
 --
 -- Triggers `users`
@@ -118,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `user_points` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`userId`,`points`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -134,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `user_skills` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`userId`,`skillId`),
   KEY `user_skills_ibfk_2` (`skillId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
 --
 -- Triggers `user_skills`

@@ -1,4 +1,4 @@
-use fur;
+use may;
 insert into roles(role) values 
 ('admin'), 
 ('editor'), 
